@@ -1,0 +1,32 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block links %}
+    <li><a id = "menu" href="/">Home</a></li>
+    <li><a class="active" href="/blog" id = "menu">Blog</a></li>
+    <li><a href="#" id = "menu">Contact</a></li>
+    <li><a href="#" id = "menu">About</a></li>
+{% endblock links %}
+
+{% block content %}
+    {% if blog %}
+        <div id="title">
+            <p>
+                {{ blog.title }}
+            </p>
+        </div>
+        <div id = "tag-wrapper">
+            {% for tag in blog.tags.all %}
+                <li id = 'tag-block'>
+                    <a id="tag" href="/tags/{{ tag }}">
+                        {{ tag }}
+                    </a>
+                </li>
+            {% endfor %}
+        </div>
+        <div id="content">
+            {{ blog.content |linebreaks }}
+        </div>
+    {% endif %}
+
+{% endblock content %}

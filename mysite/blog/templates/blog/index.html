@@ -1,0 +1,50 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/blogList.css' %}" />
+{% endblock stylesheet %}
+
+{% block links %}
+    <li><a id = "menu" href="/">Home</a></li>
+    <li><a class="active" href="/blog" id = "menu">Blog</a></li>
+    <li><a href="/photography" id="menu">Photography</a></li>
+    <li><a href="#" id = "menu">Contact</a></li>
+    <li><a href="#" id = "menu">About</a></li>
+{% endblock links %}
+
+{% block content %}
+    {% if post_list %}
+        <ul id="post_list">
+            {% for post in post_list %}
+                <div id="post">
+                    <li>
+                        <a id = "title" href="/blog/{{ post.slug }}">
+                            {{ post.title }}
+                        </a>
+                    </li>
+                    <div id = "post_preview">
+                        {{ post.content |linebreaks |truncatechars:"200" }}
+                    </div>
+                    <div id = "tag-wrapper">
+                        {% for tag in post.tags.all %}
+                            <li id = 'tag-block'>
+                            <a id="tag" href="/tags/{{ tag }}">
+                                {{ tag }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>
+            no post yet
+        </p>
+    {% endif %}
+
+    <div id="bot-room">
+
+    </div>
+{% endblock content %}

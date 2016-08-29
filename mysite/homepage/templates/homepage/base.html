@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/base.css' %}" />
+    {% block stylesheet %}
+
+    {% endblock stylesheet %}
+</head>
+
+<body>
+    <nav id = "left-nav">
+        <ul id = "left-menu">
+            {% block links %}
+
+            {% endblock links %}
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <div id = "content">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+        <div id = "footer">
+            <p id="copyright">
+                COPY RIGHT MAX MA 2016
+            </p>
+        </div>
+    </div>
+
+</body>

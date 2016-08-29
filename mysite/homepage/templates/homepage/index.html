@@ -1,0 +1,24 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/homepage.css' %}" />
+{% endblock stylesheet %}
+
+{% block links %}
+    <li><a class="active" id = "menu" href="/">Home</a></li>
+    <li><a href="blog" id = "menu">Blog</a></li>
+    <li><a href="photography" id="menu">Photography</a></li>
+    <li><a href="#" id = "menu">Contact</a></li>
+    <li><a href="#" id = "menu">About</a></li>
+{% endblock links %}
+
+{% block content %}
+
+    <p id= "title">
+        FAKETO
+    </p>
+    <p id= "subtitle">
+        A place where innovation happens.
+    </p>
+{% endblock content%}
