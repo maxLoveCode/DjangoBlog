@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from ckeditor.fields import RichTextField
 
 from django.db import models
 
@@ -10,7 +11,7 @@ from django.utils.encoding import python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True)
-    content = models.TextField()
+    content = RichTextField()
     tags = models.ManyToManyField("Tag", blank=True)
     create_date = models.DateField(auto_now_add=True, db_index=True)
 

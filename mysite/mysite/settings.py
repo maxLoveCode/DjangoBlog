@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'photologue',
     'sortedm2m',
+    'ckeditor',
     'django.contrib.sites',
 ]
 
@@ -124,9 +125,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/site_media/'
 
 # for site app
 SITE_ID = 1
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
