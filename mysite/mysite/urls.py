@@ -26,8 +26,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage.views.index),
     url(r'^blog/', include('blog.urls')),
+    # url(r'^photography/', include('gallery.urls')),
     url(r'^tags/(?P<tag>[\w|\W-]+)/$$', blog.views.tag_list),
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+    url(r'^photography/', include('photologue.urls', namespace='photologue')),
 ]
 
 if settings.DEBUG is True:
