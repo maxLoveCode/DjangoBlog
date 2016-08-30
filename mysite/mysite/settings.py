@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'photologue',
     'sortedm2m',
     'ckeditor',
+    'ckeditor_uploader',
     'django.contrib.sites',
 ]
 
@@ -134,3 +135,11 @@ MEDIA_URL = '/site_media/'
 SITE_ID = 1
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 1000,
+    },
+}
+CKEDITOR_UPLOAD_PATH = "uploads/"

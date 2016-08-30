@@ -29,7 +29,10 @@ urlpatterns = [
     # url(r'^photography/', include('gallery.urls')),
     url(r'^tags/(?P<tag>[\w|\W-]+)/$$', blog.views.tag_list),
     url(r'^photography/', include('photologue.urls', namespace='photologue')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
